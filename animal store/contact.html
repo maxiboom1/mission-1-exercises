@@ -19,7 +19,7 @@
     <br><br>
     <h2>צור קשר:</h2>
     
-    <form>
+    <form action="save.html">
         <label for="fname">שם פרטי:</label><br>
         <input type="text" id="fname" name="fname" value="" maxlength="8"><br>
         <label for="lname">שם משפחה:</label><br>
@@ -29,8 +29,17 @@
         <label for="male">Male</label><br>
         <input type="radio" id="female" name="sex" value="female">
         <label for="female">Female</label><br><br>
-        <label for="msg">הודעה</label><br>
         
+        <label for="city">עיר</label><br>
+        <select id="city" name="city">
+            <optgroup label="בחר עיר">
+                <option value="tlv">תל אביב</option>
+                <option value="BY">בת ים</option>
+                <option value="rishon">ראשון</option>              
+            </optgroup>    
+        </select><br><br>
+
+        <label for="msg">הודעה</label><br>
         <textarea  id="msg" name="msg" rows="10" cols="30" maxlength="18"></textarea><br><br>
 
         <input type="submit" value="Submit">
