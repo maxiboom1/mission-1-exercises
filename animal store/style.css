@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+    direction: rtl;
+    background-color: aquamarine;
+}
+.links_bar a{
+    margin: 25px;
+    font-size: 20px;
+}
+p{
+    text-align: right;
+    margin-right: 15%;
+}
+#license{
+    direction:ltr;    
+    text-align: center;    
+    margin-right:0px;
+}
+table{    
+margin: auto;
+}
+form{
+    text-align: right;
+    margin-right: 15%;
+}
+
