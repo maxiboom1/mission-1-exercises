@@ -2,18 +2,25 @@ document.querySelector("#save").addEventListener("click",onSave);
 document.querySelector("#load").addEventListener("click",onLoad);
 
 function onSave(){
-    let fname = document.querySelector("#fname").value;
-    let lname = document.querySelector("#lname").value;
+   
+    const adress = {};
     
-    const userData = {
-        "fname":fname, 
-        "lname":lname
-    };
-
-    sessionStorage.setItem("userData", JSON.stringify(userData));
+    for (const item of document.querySelectorAll("input")){
+        adress[item.id] = item.value;    
+    }
+    
+    validate(adress)
 }
 
 function onLoad(){
-    let userData = JSON.parse(sessionStorage.getItem("userData"))
-    alert(`Name is ${userData.fname}, and the last name is ${userData.lname}`);
+    let adress = JSON.parse(localStorage.getItem("adress"))
+    
+}
+
+function validate(value){
+    if(value =="") {
+        return false;}
+    else { 
+        return true;
+    }
 }
