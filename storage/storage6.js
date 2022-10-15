@@ -1,47 +1,6 @@
-document.querySelector("#save").addEventListener("click",onSave);
-document.querySelector("#load").addEventListener("click",onLoad);
+document.querySelector("#pageColor").addEventListener("change", onSelectChange);
 
-function onSave(){
-   
-    const adress = {};
+function onSelectChange(event){
+    console.log(event.target.value)
     
-    for (const item of document.querySelectorAll("input")){
-        adress[item.id] = item.value;    
-    }
-    
-    validate(adress);
-}
-
-function onLoad(){
-    let adress = JSON.parse(localStorage.getItem("adress"))
-    console.log(`City is ${adress.city}, Street is ${adress.street}, house num is ${adress.house} and index is ${adress.index}`);   
-}
-
-function validate(adress){
-    
-    let valid = true;
-    
-    for(const property in adress){
-     
-        document.getElementById(property).style.backgroundColor = "white"; // reset color first
-        
-        if(adress[property].length == 0){
-            document.getElementById(property).style.backgroundColor = "pink";
-            console.log('Please fill the ' + property);
-            valid = false;         
-            break;
-        }
-    
-    }   
-    
-    if (valid){
-        localStorage.setItem("adress", JSON.stringify(adress))
-        resetInputs();
-    }
-}
-
-function resetInputs(){
-    for (const item of document.querySelectorAll("input")){
-        item.value = "";    
-    }
 }

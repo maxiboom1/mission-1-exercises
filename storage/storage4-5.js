@@ -12,11 +12,6 @@ function onSave(){
     validate(adress);
 }
 
-function onLoad(){
-    let adress = JSON.parse(localStorage.getItem("adress"))
-    console.log(`City is ${adress.city}, Street is ${adress.street}, house num is ${adress.house} and index is ${adress.index}`);   
-}
-
 function validate(adress){
     
     let valid = true;
@@ -34,10 +29,17 @@ function validate(adress){
     
     }   
     
-    if (valid){
-        localStorage.setItem("adress", JSON.stringify(adress))
-        resetInputs();
-    }
+    if (valid){ save(adress) }
+}
+
+function onLoad(){
+    let adress = JSON.parse(localStorage.getItem("adress"))
+    console.log(`City is ${adress.city}, Street is ${adress.street}, house num is ${adress.house} and index is ${adress.index}`);   
+}
+
+function save(adress){
+    localStorage.setItem("adress", JSON.stringify(adress))
+    resetInputs();
 }
 
 function resetInputs(){
