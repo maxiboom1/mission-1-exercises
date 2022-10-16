@@ -5,8 +5,11 @@ const books = [
 ]
 
 let stringifyed = JSON.stringify(books); // its an book array that stringified with JSON.stringify
-//alert(stringifyed) 
 const items = JSON.parse(stringifyed);
+
+alert(stringifyed) 
+console.log(books);
+console.log(items);
 
 render()
 
