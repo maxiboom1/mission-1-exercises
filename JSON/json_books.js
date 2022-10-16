@@ -15,7 +15,6 @@ render()
 
 function render(){
     let content = textContentBuider(books);
-    console.log(content)
     document.getElementById('dynamic_content').innerHTML = ""; // clear canvas before printing new card_list
     const node = document.createElement("div");
     node.innerHTML = content;
