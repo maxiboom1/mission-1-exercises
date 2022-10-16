@@ -9,7 +9,7 @@ const books = [
 let stringifyed = JSON.stringify(books); // its an book array that stringified with JSON.stringify
 const items = JSON.parse(stringifyed);
 
-alert(stringifyed) 
+console.log(stringifyed) // in exercise it should be "alert", but i dont like alerts.
 console.log(books);
 console.log(items);
 
@@ -46,7 +46,7 @@ function createBookText(book){
 
 const myCat = {name:"Bastet", age:"6", color:"white", isSterile:"true"}
 const myCatStringified = JSON.stringify(myCat);
-alert(myCatStringified);
+console.log(myCatStringified); // in exercise it should be "alert", but i dont like alerts.
 const yourCat = JSON.parse(myCatStringified);
 
 renderCat(yourCat);
