@@ -1,3 +1,5 @@
+// Exercise 1 - Books
+
 const books = [
     {id:"1", name:"book1_name", autor:"beni_kohen", price:"15"},
     {id:"2", name:"book2_name", autor:"arik_chen", price:"25"},
@@ -11,7 +13,7 @@ alert(stringifyed)
 console.log(books);
 console.log(items);
 
-render()
+render();
 
 function render(){
     const node = document.createElement("div");
@@ -23,11 +25,10 @@ function textContentBuider(books){
     
     let innerHtmlContent = "";
     
-    for(let i = 0; i<books.length; i++){
-        
-        innerHtmlContent += createBookText(books[i]);
+    for (const book of books){
+        innerHtmlContent += createBookText(book); 
+    }
 
-    } 
     return innerHtmlContent; 
 }
 
@@ -39,4 +40,24 @@ function createBookText(book){
     <p> - - - - - - - - - - - - - - - - - - - - - - </p>
     `
     return textData;
+}
+
+// Exercise 2 - myCat
+
+const myCat = {name:"Bastet", age:"6", color:"white", isSterile:"true"}
+const myCatStringified = JSON.stringify(myCat);
+alert(myCatStringified);
+const yourCat = JSON.parse(myCatStringified);
+
+renderCat(yourCat);
+
+function renderCat(yourCat){
+    const textData = `<p>Name: ${yourCat.name}</p>
+    <p>Age: ${yourCat.age}</p>
+    <p>Color: ${yourCat.color}</p>
+    <p>Is Sterile: ${yourCat.isSterile}</p>
+    `
+    const node = document.createElement("div");
+    node.innerHTML = textData;
+    document.getElementById('dynamic_content2').appendChild(node);
 }
