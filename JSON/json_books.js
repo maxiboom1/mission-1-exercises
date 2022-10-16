@@ -14,10 +14,8 @@ console.log(items);
 render()
 
 function render(){
-    let content = textContentBuider(books);
-    document.getElementById('dynamic_content').innerHTML = ""; // clear canvas before printing new card_list
     const node = document.createElement("div");
-    node.innerHTML = content;
+    node.innerHTML = textContentBuider(books);;
     document.getElementById('dynamic_content').appendChild(node);
 }
 
@@ -30,7 +28,7 @@ function textContentBuider(books){
         innerHtmlContent += createBookText(books[i]);
 
     } 
-    return innerHtmlContent;
+    return innerHtmlContent; 
 }
 
 function createBookText(book){
