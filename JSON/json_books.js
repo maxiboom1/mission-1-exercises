@@ -1,20 +1,42 @@
-// Exercise 1 - Books
-
 const books = [
-    {id:"1", name:"book1_name", autor:"beni_kohen", price:"15"},
-    {id:"2", name:"book2_name", autor:"arik_chen", price:"25"},
-    {id:"3", name:"book3_name", autor:"meir_ariel", price:"32"},
-]
+  {
+    id: "1",
+    name: "book1_name",
+    autor: "beni_kohen",
+    price: "15",
+  },
+  {
+    id: "2",
+    name: "book2_name",
+    autor: "arik_chen",
+    price: "25",
+  },
+  {
+    id: "3",
+    name: "book3_name",
+    autor: "meir_ariel",
+    price: "32",
+  },
+];
 
 let stringifyed = JSON.stringify(books); // its an book array that stringified with JSON.stringify
 const items = JSON.parse(stringifyed);
 
-console.log(stringifyed) // in exercise it should be "alert", but i dont like alerts.
-console.log(books);
-console.log(items);
+const content = document.querySelector(".content");
 
-render();
+books.forEach((book)=>{
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <p>Book ID: ${book.id}</p>
+    <p>Book Name: ${book.name}</p>
+    <p>Book Autor: ${book.autor}</p>
+    <p>Book Price: ${book.price}</p>
+    <p> - - - - - - - - - - - - - - - - - - - - - - </p>
+    `
+    content.appendChild(div);
+})
 
+/* render();
 function render(){
     const node = document.createElement("div");
     node.innerHTML = textContentBuider(books);;
@@ -41,23 +63,21 @@ function createBookText(book){
     `
     return textData;
 }
+ */
 
-// Exercise 2 - myCat
+//Exercise 2 - myCat
 
 const myCat = {name:"Bastet", age:"6", color:"white", isSterile:"true"}
-const myCatStringified = JSON.stringify(myCat);
-console.log(myCatStringified); // in exercise it should be "alert", but i dont like alerts.
-const yourCat = JSON.parse(myCatStringified);
 
-renderCat(yourCat);
+let div = document.createElement("div");
 
-function renderCat(yourCat){
-    const textData = `<p>Name: ${yourCat.name}</p>
-    <p>Age: ${yourCat.age}</p>
-    <p>Color: ${yourCat.color}</p>
-    <p>Is Sterile: ${yourCat.isSterile}</p>
-    `
-    const node = document.createElement("div");
-    node.innerHTML = textData;
-    document.getElementById('dynamic_content2').appendChild(node);
-}
+div.innerHTML = `
+  <h1>My cat:</h1>
+  <p>Cat name: ${myCat.name}</p>
+  <p>Cat age: ${myCat.age}</p>
+  <p>Cat color: ${myCat.color}</p>
+  <p>Cat is sterile?: ${myCat.isSterile}</p>
+  <p> - - - - - - - - - - - - - - - - - - - - - - </p>
+  `
+content.appendChild(div);
+
